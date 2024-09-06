@@ -1,0 +1,17 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="personName">Имя:</label>
+    <input type="text" name="personName" required>
+
+    <label for="productId">Продукт:</label>
+    <select name="productId">
+        {% for product in products %}
+        <option value="{{ product.id }}">{{ product.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="quantity">Количество:</label>
+    <input type="number" name="quantity" required>
+
+    <button type="submit">Создать заказ</button>
+</form>

@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Имя клиента</th>
+        <th>Общее время приготовления</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.personName }}</td>
+        <td>{{ order.total_cooking_time }} минут</td>
+    </tr>
+    {% endfor %}
+</table>
